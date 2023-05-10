@@ -75,8 +75,8 @@ def makeUsefulDf(df, noise=2.5, hours_prior=24):
     temp_noise = df['tempc'] + np.random.normal(0, noise, df.shape[0])
     r_df["temp_n"] = zscore(temp_noise)
     r_df['temp_n^2'] = zscore([x*x for x in temp_noise])
-    print(r_df.select_dtypes(np.float64).columns)
+    #print(r_df.select_dtypes(np.float64).columns)
     r_df[r_df.select_dtypes(np.float64).columns] = r_df.select_dtypes(np.float64).astype(np.float32)
-    print(r_df.select_dtypes(np.float64).columns)
+    #print(r_df.select_dtypes(np.float64).columns)
     return r_df
 
