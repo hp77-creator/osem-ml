@@ -16,6 +16,10 @@ from model import create_model, makeUsefulDf
 app = FastAPI()
 
 # general model
+@app.get("/")
+def home():
+    return {"Hello" : "World"}
+
 @app.get('/ml')
 def read_ml():
     SHAPE=71 # number of columns in our dataframe
